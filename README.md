@@ -31,7 +31,7 @@ await pex.printers();
 
 // Pass a FormData object
 const data = new FormData;
-data.set("file", new File([blobData], "document.pdf")));
+data.set("file", new File([blobData], "document.pdf"));
 data.set("printer", "Canon TS8300 series");
 data.set("format", "A4");
 data.set("orientation", "P");
