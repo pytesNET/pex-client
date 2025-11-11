@@ -23,7 +23,7 @@ const pex = new PEX({
     host: "localhost",
     port: 4422,
     protocol: "http",
-    timeout: 5000
+    timeout: 10_000
 });
 
 await pex.status();
