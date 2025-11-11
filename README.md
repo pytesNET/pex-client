@@ -19,26 +19,35 @@ npm i @pytes.net/pex.js
 ```js
 import { PEX } from "@pytes.net/pex.js";
 
+// Create and configure your new PEX client.
+// All options shown below reflect the default values.
 const pex = new PEX({
-    host: "localhost",
+    host: "127.0.0.1",
     port: 4422,
     protocol: "http",
-    timeout: 10_000
+    timeout: 10_000,
+    headers: {
+        Accept: "application/json",
+    },
+    exceptions: true,
 });
 
+// Retrieve status
 await pex.status();
+
+// Retrieve installed printers
 await pex.printers();
 
-// Pass a FormData object
+// Print / Send a file using a FormData object
 const data = new FormData;
-data.set("file", new File([blobData], "document.pdf"));
+data.set("file", new File([blobData], "document.pdf", { type: "application/pdf" }));
 data.set("printer", "Canon TS8300 series");
 data.set("format", "A4");
 data.set("orientation", "P");
 data.set("quantity", 1);
 await pex.print(data);
 
-// Pass a payload object
+// Print / Send some lines using a JSON payload
 await pex.print({ 
     lines: ["foo", "bar"],
     printer: "Zebra ZD411 Label Printer",

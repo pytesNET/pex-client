@@ -12,9 +12,9 @@ export default [
     {
         input,
         output: [
-            { name: 'pex', file: path.join(outDir, "pex.mjs"), format: "esm", sourcemap: true },
-            { name: 'pex', file: path.join(outDir, "pex.cjs"), format: "cjs", sourcemap: true, exports: "named" },
-            { name: 'pex', file: path.join(outDir, "pex.js"),  format: "umd", sourcemap: true },
+            { name: 'PEX', file: path.join(outDir, "pex.mjs"), format: "esm", sourcemap: true },
+            { name: 'PEX', file: path.join(outDir, "pex.cjs"), format: "cjs", sourcemap: true, exports: "named" },
+            { name: 'PEX', file: path.join(outDir, "pex.js"),  format: "umd", sourcemap: true },
         ],
         plugins: [
             resolve({ preferBuiltins: true }),
