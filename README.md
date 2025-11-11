@@ -3,8 +3,8 @@ PEX - Printer Execution Service
 **P**rinter **ex**ecution JavaScript client library.
 
 [PEX](https://github.com/pytesNET/pex) is a lightweight Python-based printer service and server. 
-It allows direct print jobs to local printers without triggering the usual print dialog.  
-This is especially useful for web apps, PWAs, or kiosk systems where seamless printing is mandatory.
+It allows direct print jobs to local printers without triggering the usual print dialog. This is 
+especially useful for web apps, PWAs, or kiosk systems where seamless printing is mandatory.
 
 This JavaScript library provides a minimal, typed client for the PEX HTTP API.
 
