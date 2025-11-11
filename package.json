@@ -2,8 +2,22 @@
     "name": "@pytes.net/pex.js",
     "version": "0.1.0",
     "description": "Minimalistic JavaScript client layer for the PEX - Printer Execution python server.",
+    "keywords": [
+        "pex",
+        "printer-service",
+        "fetch"
+    ],
+    "homepage": "https://github.com/pytesNET/pex.js",
     "license": "MIT",
-    "author": "Sam",
+    "author": "rat.md <info@rat.md> (https://rat.md)",
+    "bugs": {
+        "url": "https://www.github.com/pytesNET/pex.js",
+        "email": "sam@pytes.net"
+    },
+    "repository": {
+        "type": "git",
+        "url": "https://github.com/pytesNET/pex.js"
+    },
     "type": "module",
     "main": "./dist/pex.cjs",
     "module": "./dist/pex.mjs",
@@ -26,6 +40,7 @@
         "typecheck": "tsc --noEmit",
         "prepublishOnly": "npm run build && npm run typecheck"
     },
+    "dependencies": { },
     "devDependencies": {
         "@rollup/plugin-commonjs": "^29.0.0",
         "@rollup/plugin-node-resolve": "^16.0.3",
