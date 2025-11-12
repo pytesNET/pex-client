@@ -1,5 +1,5 @@
 {
-    "name": "@pytes.net/pex.js",
+    "name": "@pytes.net/pex-client",
     "version": "0.1.0",
     "description": "Minimalistic JavaScript client layer for the PEX - Printer Execution python server.",
     "keywords": [
@@ -7,16 +7,16 @@
         "printer-service",
         "fetch"
     ],
-    "homepage": "https://github.com/pytesNET/pex.js",
+    "homepage": "https://github.com/pytesNET/pex-client",
     "license": "MIT",
     "author": "rat.md <info@rat.md> (https://rat.md)",
     "bugs": {
-        "url": "https://www.github.com/pytesNET/pex.js",
+        "url": "https://www.github.com/pytesNET/pex-client",
         "email": "sam@pytes.net"
     },
     "repository": {
         "type": "git",
-        "url": "https://github.com/pytesNET/pex.js"
+        "url": "https://github.com/pytesNET/pex-client"
     },
     "type": "module",
     "main": "./dist/pex.cjs",

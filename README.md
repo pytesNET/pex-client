@@ -11,13 +11,13 @@ This JavaScript library provides a minimal, typed client for the PEX HTTP API.
 ## Installation
 
 ```sh
-npm i @pytes.net/pex.js
+npm i @pytes.net/pex-client
 ```
 
 ## Usage
 
 ```js
-import { PEX } from "@pytes.net/pex.js";
+import { PEX } from "@pytes.net/pex-client";
 
 // Create and configure your new PEX client.
 // All options shown below reflect the default values.
