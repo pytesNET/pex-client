@@ -10,8 +10,34 @@ export interface PexOptions {
     exceptions?: boolean;
 }
 
+
 /**
- * Payloads submitted to /pex/print
+ * Common PEX typings
+ */
+export interface PexPrinters {
+    [alias: string]: string;
+}
+
+export interface PexPageFormats {
+    [key: string]: [number, number, string?]
+}
+
+export interface PexLineDefinition {
+    text: string;
+    font?: string;
+    size?: number;
+    height?: number;
+    bold?: boolean;
+    italic?: boolean;
+    underline?: boolean;
+    strikethrough?: boolean;
+}
+
+export type PexLines = (string|PexLineDefinition)[]
+
+
+/**
+ * PEX Payloads (used for /pex/print)
  */
 export interface PexBasePayload {
     printer?: string | 'default';
@@ -25,7 +51,7 @@ export interface PexFilePayload extends PexBasePayload {
 }
 
 export interface PexLinesPayload extends PexBasePayload {
-    lines: string[];
+    lines: PexLines;
     font_name?: string;
     font_size?: number;
     line_height?: number;
@@ -33,8 +59,9 @@ export interface PexLinesPayload extends PexBasePayload {
 
 export type PexPayload = PexFilePayload | PexLinesPayload;
 
+
 /**
- * Response structure received from /pex/*
+ * PEX General Response structures (received from pex/*)
  */
 export interface PexSuccessResponse<T = Record<string, unknown>> {
     status: 'success';
@@ -49,27 +76,20 @@ export interface PexErrorResponse<D = unknown> {
 
 export type PexResponse<T = Record<string, unknown>, D = unknown> = PexSuccessResponse<T> | PexErrorResponse<D>;
 
+
 /**
- * PEX Python Configuration Types
+ * PEX Response arguments
  */
-export interface PexPageFormats {
-    [key: string]: [number, number, string?]
-}
-
-export interface PexPrinters {
-    [alias: string]: string;
-}
-
 export interface PexPrintFileArguments {
     filepath: string;
-    printer_name: string;
-    paper_format: string;
-    orientation: string;
-    quantity: number;    
+    printer_name?: string;
+    paper_format?: string;
+    orientation?: string;
+    quantity?: number;    
 }
 
 export interface PexPrintLinesArguments {
-    lines: string[];
+    lines: PexLineDefinition[];
     printer_name: string;
     paper_format: string;
     orientation: string;
@@ -81,8 +101,9 @@ export interface PexPrintLinesArguments {
 
 export type PexPrintArguments = PexPrintFileArguments | PexPrintLinesArguments;
 
+
 /**
- * Available Responses
+ * PEX Responses
  */
 export interface PexStatusResult {
     name: string;

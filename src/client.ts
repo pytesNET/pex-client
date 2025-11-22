@@ -85,7 +85,7 @@ export class PEX {
             for (const [key, val] of Object.entries(data)) {
                 if (Array.isArray(val)) {
                     for (const line of val) {
-                        payload.append(key, line);
+                        payload.append(key, typeof line === "object" ? JSON.stringify(line) : line);
                     }
                 } else if (val != null) {
                     payload.set(key, String(val));

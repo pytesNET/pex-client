@@ -13,7 +13,7 @@ describe("PEX", () => {
             exceptions: false
         });
         const response = await pex.print({
-            lines: ["Line 1", "Line 2"],
+            lines: ["Line 1", { text: 'line 2', bold: true }],
         });
         expect(response.status).toBe("success");
     }, 20_000);
