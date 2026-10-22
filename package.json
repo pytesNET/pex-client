@@ -1,6 +1,6 @@
 {
     "name": "@pytes.net/pex-client",
-    "version": "0.2.0",
+    "version": "0.2.1",
     "description": "Minimalistic JavaScript client layer for the PEX - Printer Execution python server.",
     "keywords": [
         "pex",

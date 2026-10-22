@@ -185,6 +185,8 @@ export interface PexStatusResult {
 export interface PexPrintersResult {
     /** Operating-system printer names discovered by PEX. */
     printers: string[];
+    /** Configured aliases mapped to OS printer names; available with PEX 0.5.1 and later. */
+    aliases?: PexPrinters;
     /** Resolved default OS printer name, or null when unset. */
     printer_default: string | null;
 }

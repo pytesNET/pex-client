@@ -1,6 +1,9 @@
 PEX - Changelog
 ===============
 
+## Version 0.2.1 (Beta)
+- Add: Typed printer aliases from PEX 0.5.1 for display labels, with PEX 0.5.0 compatibility.
+
 ## Version 0.2.0 (Beta)
 - Add: PEX 0.5.0 support with bearer-token configuration and typed job status queries.
 - Add: Per-print idempotency keys and asynchronous submission options.

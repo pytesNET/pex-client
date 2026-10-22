@@ -47,6 +47,22 @@ and port, without a path or trailing slash. The client cannot override the serve
 | `pex.print(data, options?)` | Submit a PDF or text label                            |
 | `pex.job(id)`               | Read an existing job's current status                 |
 
+On PEX 0.5.1 and later, `pex.printers()` also returns `result.aliases`: configured
+display labels mapped to OS printer names. The field is optional for compatibility
+with PEX 0.5.0. Configured aliases can include printers that are currently unavailable.
+
+```ts
+const response = await pex.printers();
+if (response.status === "success") {
+    const options = Object.entries(response.result.aliases ?? {}).map(([alias, name]) => ({
+        label: alias,
+        value: alias, // Pass this value as printer when printing.
+        printerName: name,
+    }));
+    console.log(options);
+}
+```
+
 ### Text labels
 
 ```ts
