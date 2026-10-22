@@ -14,7 +14,7 @@ export default [
         output: [
             { name: 'PEX', file: path.join(outDir, "pex.mjs"), format: "esm", sourcemap: true },
             { name: 'PEX', file: path.join(outDir, "pex.cjs"), format: "cjs", sourcemap: true, exports: "named" },
-            { name: 'PEX', file: path.join(outDir, "pex.js"),  format: "umd", sourcemap: true },
+            { name: 'PEX', file: path.join(outDir, "pex.js"),  format: "umd", sourcemap: true, exports: "named" },
         ],
         plugins: [
             resolve({ preferBuiltins: true }),
